@@ -8,6 +8,7 @@ export const AuthConsumer = AuthContext.Consumer;
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null)
   const navigate = useNavigate()
+  const [msgs, setMsgs] = useState(null)
 
   const handleRegister = (user) => {
     axios.post('/api/auth', user)
@@ -15,7 +16,13 @@ const AuthProvider = ({ children }) => {
         setUser(res.data.data)
         navigate('/cats')
       })
-      .catch( err => console.log(err) )
+      .catch( err => {
+        console.log(err)
+        setMsgs({ 
+          variant: 'danger',
+          msg: err.response.data.errors.full_messages[0],
+        })
+      })
   }
 
   const handleLogin = (user) => {
@@ -24,7 +31,13 @@ const AuthProvider = ({ children }) => {
         setUser(res.data.data)
         navigate('/cats')
       })
-      .catch( err => console.log(err) )
+      .catch( err => {
+        setMsgs({ 
+          variant: 'danger',
+          msg: err.response.data.errors[0],
+        })
+        console.log(err)
+      })
   }
 
   const handleLogout = () => {
@@ -33,7 +46,12 @@ const AuthProvider = ({ children }) => {
         setUser(null)
         navigate('/login')
       })
-      .catch( err => console.log(err) )
+      .catch( err => {
+        setMsgs({ 
+          variant: 'danger',
+          msg: err.response.data.errors[0],
+        })
+      })
   }
 
   return(
@@ -44,6 +62,8 @@ const AuthProvider = ({ children }) => {
       handleLogout,
       authenticated: user !== null,
       setUser: (user) => setUser(user),
+      msgs,
+      setMsgs,
     }}>
       { children }
     </AuthContext.Provider>

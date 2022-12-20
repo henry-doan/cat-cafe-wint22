@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import { AuthConsumer } from '../../providers/AuthProvider';
 import { Form, Button } from 'react-bootstrap';
+import Flash from '../shared/Flash';
 
-const Login = ({ handleLogin }) => {
+const Login = ({ handleLogin, msgs, setMsgs }) => {
   const [user, setUser] = useState({ email: '', password: '' })
 
   const handleSubmit = (e) => {
@@ -13,6 +14,15 @@ const Login = ({ handleLogin }) => {
 
   return (
     <>
+      { msgs ?
+        <Flash
+          variant={msgs.variant}
+          msg={msgs.msg}
+          setErrors={setMsgs}
+        />
+        :
+        null
+      }
       <h1>Login</h1>
       <Form onSubmit={handleSubmit}>
         <Form.Group className="mb-3">
