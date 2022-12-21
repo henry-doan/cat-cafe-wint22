@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   
   namespace :api do
     # no need for the user for the routes with devise
-    resources :cats
+    resources :cats do
+      resources :notes
+    end
   end
 end

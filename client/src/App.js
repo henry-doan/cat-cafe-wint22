@@ -8,6 +8,7 @@ import FetchUser from './components/auth/FetchUser';
 import Cats from './components/cats/Cats';
 import ProtectedRoute from './components/auth/ProtectedRoute';
 import CatForm from './components/cats/CatForm';
+import Notes from './components/notes/Notes';
 
 const App = () => (
   <>
@@ -20,6 +21,7 @@ const App = () => (
             {/* only routes or pages that can be access when login */}
             <Route path='/cats' element={<Cats />} />
             <Route path='/:id/updateCat' element={<CatForm />} />
+            <Route path='/:catId/notes' element={<Notes />} />
           </Route>
           <Route path='/login' element={<Login />} />
           <Route path='/register' element={<Register />} />

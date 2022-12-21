@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  subject: MyString
+  body: MyText
+  ndate: 2022-12-20 20:40:22
+  ntime: 2022-12-20 20:40:22
+  cat: one
+
+two:
+  subject: MyString
+  body: MyText
+  ndate: 2022-12-20 20:40:22
+  ntime: 2022-12-20 20:40:22
+  cat: two

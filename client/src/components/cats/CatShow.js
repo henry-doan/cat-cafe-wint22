@@ -50,7 +50,11 @@ const CatShow = ({ id, name, breed, registry, dob, avatar, deleteCat }) => {
                 >
                   Delete
                 </Button>
-                <Button>Notes</Button>
+                <Link
+                  to={`/${id}/notes`}
+                >
+                  <Button>Notes</Button>
+                </Link>
               </Container>
             </Col>
             <Col>
