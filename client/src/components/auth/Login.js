@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { AuthConsumer } from '../../providers/AuthProvider';
-import { Form, Button } from 'react-bootstrap';
+import { Form, Button, Container } from 'react-bootstrap';
 import Flash from '../shared/Flash';
+import { Link } from 'react-router-dom';
 
 const Login = ({ handleLogin, msgs, setMsgs }) => {
   const [user, setUser] = useState({ email: '', password: '' })
@@ -13,7 +14,7 @@ const Login = ({ handleLogin, msgs, setMsgs }) => {
   }
 
   return (
-    <>
+    <Container>
       { msgs ?
         <Flash
           variant={msgs.variant}
@@ -23,7 +24,7 @@ const Login = ({ handleLogin, msgs, setMsgs }) => {
         :
         null
       }
-      <h1>Login</h1>
+      <h1 className='text-center'>Login</h1>
       <Form onSubmit={handleSubmit}>
         <Form.Group className="mb-3">
           <Form.Label>Email address</Form.Label>
@@ -52,7 +53,10 @@ const Login = ({ handleLogin, msgs, setMsgs }) => {
           Submit
         </Button>
       </Form>
-    </>
+      <Link to='/register'>
+        No account yet? Sign Up!
+      </Link>
+    </Container>
   )
 }
 
