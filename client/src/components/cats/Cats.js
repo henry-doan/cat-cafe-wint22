@@ -1,10 +1,21 @@
+import { CatConsumer } from "../../providers/CatProvider";
+import CatList from './CatList';
 
-const Cats = () => {
+const Cats = ({ cats }) => {
   return (
     <>
-      <h1>Cats</h1>
+      <h1>My Cats</h1>
+      <CatList 
+        cats={cats}
+      />
     </>
   )
 }
 
-export default Cats;
+const ConnectedCats = (props) => (
+  <CatConsumer>
+    { value => <Cats {...value} {...props} />}
+  </CatConsumer>
+)
+
+export default ConnectedCats;
