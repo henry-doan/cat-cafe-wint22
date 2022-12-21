@@ -19,12 +19,51 @@ const CatProvider = ({ children }) => {
       })
   }
 
+  const addCat = (cat) => {
+    axios.post('/api/cats', { cat })
+      .then( res => setCats([...cats, res.data]))
+      .catch( err => {
+        console.log(err)
+        setMsgs(err.response.data.errors)
+      })
+  }
+
+  const updateCat = (id, cat) => {
+    axios.put(`/api/cats/${id}`, { cat })
+      .then(res => {
+        const newUpdatedCats = cats.map( c => {
+          if (c.id === id) {
+            return res.data
+          }
+          return c
+        })
+        setCats(newUpdatedCats)
+        navigate('/cats')
+      })
+      .catch( err => {
+        console.log(err)
+        setMsgs(err.response.data.errors)
+      })
+  }
+
+  const deleteCat = (id) => {
+    axios.delete(`/api/cats/${id}`)
+      .then( res => setCats( cats.filter(c => c.id !== id)))
+      .catch( err => {
+        console.log(err)
+        setMsgs(err.response.data.errors)
+      })
+  }
+
   return (
     <CatContext.Provider value={{
       cats, 
       getAllCats,
       msgs,
-      setMsgs
+      setMsgs,
+      addCat,
+      updateCat,
+      deleteCat,
     }}>
       { children }
     </CatContext.Provider>
