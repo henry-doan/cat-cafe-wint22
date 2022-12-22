@@ -1,10 +1,17 @@
+@font-face {
+  font-family: "Marhey";
+  src: local("Marhey"),
+   url("./components/styles/Marhey/Marhey-VariableFont_wght.ttf") format("truetype");
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  font-family: "Marhey", -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+    sans-serif !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  color: #584036 !important;
 }
 
 code {

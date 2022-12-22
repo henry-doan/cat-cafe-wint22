@@ -1,34 +1,35 @@
-import { Image, Container, Row, Col, Button, Accordion } from 'react-bootstrap';
+import { Image, Container, Row, Col, Accordion } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { MainBtn, MainBtn2, HeadImg, MainHeader } from '../styles/mainStyles';
 
 const Home = () => (
   <>
     <Image 
       src='https://images.unsplash.com/photo-1608096281339-5bcae1ec2f12?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2369&q=80'
       alt='home'
+      width='100%'
     />
+    <br />
+    <br />
+    <br />
     <Container>
       <Row>
         <Col>
-          <h1>Headline text</h1>
+          <MainHeader>Enjoy a Catpuccino in a <br />Purrfect Catmosphere</MainHeader>
         </Col>
         <Col>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam</p>
+          <p>Have purrsausive experience with putty darn cute kittys in the biggest meowment of the century.</p>
           <Row>
             <Col>
               <Link to='/register'>
-                <Button>
+                <MainBtn>
                   SignUp
-                </Button>
+                </MainBtn>
               </Link>
-            </Col>
-            <Col>
               <Link to='/login'>
-                <Button>
+                <MainBtn2>
                   Login
-                </Button>
+                </MainBtn2>
               </Link>
             </Col>
           </Row>
@@ -36,51 +37,54 @@ const Home = () => (
       </Row>
     </Container>
     <br />
+    <br />
+    <br />
     <Container>
-      <Row>
+      <Row md='2'>
         <Col>
-          <Image 
+          <HeadImg 
             src="https://images.unsplash.com/photo-1607923432780-7a9c30adcb72?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2369&q=80"
             alt='head2'
           />
         </Col>
-        <Col>
-          <h1>Headline text</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam</p>
+        <Col className='justify-content-center align-self-center'>
+          <MainHeader>Check out Pawsome <br />Cats while enjoying <br /> some Kit-teas</MainHeader>
+          <p>Meow Meow Meow Meow Meow Meow!</p>
         </Col>
       </Row>
     </Container>
     <br />
-    <h1>FAQ</h1>
-    <Accordion defaultActiveKey="0">
-      <Accordion.Item eventKey="0">
-        <Accordion.Header>Accordion Item #1</Accordion.Header>
-        <Accordion.Body>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam
-        </Accordion.Body>
-      </Accordion.Item>
-      <Accordion.Item eventKey="1">
-        <Accordion.Header>Accordion Item #2</Accordion.Header>
-        <Accordion.Body>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam
-        </Accordion.Body>
-      </Accordion.Item>
-      <Accordion.Item eventKey="2">
-        <Accordion.Header>Accordion Item #3</Accordion.Header>
-        <Accordion.Body>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam.
-        </Accordion.Body>
-      </Accordion.Item>
-    </Accordion>
-
+    <br />
+    <br />
+    <Container>
+      <h1 className='text-center'>FAQs</h1>
+      <Accordion defaultActiveKey="0">
+        <Accordion.Item eventKey="0">
+          <Accordion.Header>Accordion Item #1</Accordion.Header>
+          <Accordion.Body>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+            minim veniam
+          </Accordion.Body>
+        </Accordion.Item>
+        <Accordion.Item eventKey="1">
+          <Accordion.Header>Accordion Item #2</Accordion.Header>
+          <Accordion.Body>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+            minim veniam
+          </Accordion.Body>
+        </Accordion.Item>
+        <Accordion.Item eventKey="2">
+          <Accordion.Header>Accordion Item #3</Accordion.Header>
+          <Accordion.Body>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+            minim veniam.
+          </Accordion.Body>
+        </Accordion.Item>
+      </Accordion>
+    </Container>
     <br />
     <br />
     <br />

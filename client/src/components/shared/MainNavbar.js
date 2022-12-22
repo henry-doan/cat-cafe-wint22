@@ -1,6 +1,7 @@
 import { AuthConsumer } from "../../providers/AuthProvider";
 import { Link } from 'react-router-dom';
 import { Button, Container, Navbar } from 'react-bootstrap';
+import { MainBtn, MainBtn2 } from "../styles/mainStyles";
 
 const MainNavbar = ({ user, handleLogout }) => {
   
@@ -12,12 +13,11 @@ const MainNavbar = ({ user, handleLogout }) => {
           <Link to='/cats'>
             <Button variant="link">Cats</Button>
           </Link>
-          <Button 
+          <MainBtn2 
             onClick={() => handleLogout()} 
-            variant="light"
           >
             Logout
-          </Button>
+          </MainBtn2>
         </>
       )
     } else {
@@ -25,10 +25,10 @@ const MainNavbar = ({ user, handleLogout }) => {
       return (
         <>
           <Link to='/login'>
-            <Button variant="light">Login</Button>
+            <MainBtn2>Login</MainBtn2>
           </Link>
           <Link to='/register'>
-            <Button variant="dark">SignUp</Button>
+            <MainBtn>SignUp</MainBtn>
           </Link>
         </>
       )

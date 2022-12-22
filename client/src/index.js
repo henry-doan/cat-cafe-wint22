@@ -9,6 +9,7 @@ import { initMiddleware } from 'devise-axios';
 import AuthProvider from './providers/AuthProvider';
 import CatProvider from './providers/CatProvider';
 import NoteProvider from './providers/NoteProvider';
+import './components/styles/Marhey/Marhey-VariableFont_wght.ttf';
 
 initMiddleware();
 
