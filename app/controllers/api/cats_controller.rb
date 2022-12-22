@@ -18,7 +18,7 @@ class Api::CatsController < ApplicationController
     else
       errKey = @cat.errors.messages.keys[0].to_s
       errValue = @cat.errors.messages.values[0][0]
-      render json: { errors: "#{errKey} #{errValue}" }, status: :unproccessable_entity
+      render json: { errors: "#{errKey} #{errValue}" }, status: :unprocessable_entity
     end
   end
 
@@ -28,7 +28,7 @@ class Api::CatsController < ApplicationController
     else
       errKey = @cat.errors.messages.keys[0].to_s
       errValue = @cat.errors.messages.values[0][0]
-      render json: { errors: "#{errKey} #{errValue}" }, status: :unproccessable_entity
+      render json: { errors: "#{errKey} #{errValue}" }, status: :unprocessable_entity
     end
   end
 

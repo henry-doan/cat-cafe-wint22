@@ -3,8 +3,9 @@ import CatList from './CatList';
 import { useState, useEffect } from "react";
 import { Container, Modal, Button } from 'react-bootstrap';
 import CatForm from './CatForm';
+import Flash from '../shared/Flash';
 
-const Cats = ({ cats, getAllCats }) => {
+const Cats = ({ cats, getAllCats, msgs, setMsgs  }) => {
   const [adding, setAdd] = useState(false)
 
   useEffect( () => {
@@ -13,6 +14,15 @@ const Cats = ({ cats, getAllCats }) => {
 
   return (
     <Container>
+      { msgs ?
+        <Flash
+          variant={msgs.variant}
+          msg={msgs.msg}
+          setErrors={setMsgs}
+        />
+        :
+        null
+      }
       <Button variant="primary" onClick={() => setAdd(true)}>
         +
       </Button>

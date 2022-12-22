@@ -17,7 +17,7 @@ class Api::NotesController < ApplicationController
     else
       errKey = @note.errors.messages.keys[0].to_s
       errValue = @note.errors.messages.values[0][0]
-      render json: { errors: "#{errKey} #{errValue}" }, status: :unproccessable_entity
+      render json: { errors: "#{errKey} #{errValue}" }, status: :unprocessable_entity
     end
   end
 
@@ -27,7 +27,7 @@ class Api::NotesController < ApplicationController
     else
       errKey = @note.errors.messages.keys[0].to_s
       errValue = @note.errors.messages.values[0][0]
-      render json: { errors: "#{errKey} #{errValue}" }, status: :unproccessable_entity
+      render json: { errors: "#{errKey} #{errValue}" }, status: :unprocessable_entity
     end
   end
 

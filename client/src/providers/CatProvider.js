@@ -15,7 +15,7 @@ const CatProvider = ({ children }) => {
       .then( res => setCats(res.data))
       .catch( err => {
         console.log(err)
-        setMsgs(err.response.data.errors)
+        setMsgs({ msg: err.response.data.errors })
       })
   }
 
@@ -24,7 +24,7 @@ const CatProvider = ({ children }) => {
       .then( res => setCats([...cats, res.data]))
       .catch( err => {
         console.log(err)
-        setMsgs(err.response.data.errors)
+        setMsgs({ msg: err.response.data.errors })
       })
   }
 
@@ -42,7 +42,7 @@ const CatProvider = ({ children }) => {
       })
       .catch( err => {
         console.log(err)
-        setMsgs(err.response.data.errors)
+        setMsgs({ msg: err.response.data.errors })
       })
   }
 
@@ -51,7 +51,7 @@ const CatProvider = ({ children }) => {
       .then( res => setCats( cats.filter(c => c.id !== id)))
       .catch( err => {
         console.log(err)
-        setMsgs(err.response.data.errors)
+        setMsgs({ msg: err.response.data.errors })
       })
   }
 
