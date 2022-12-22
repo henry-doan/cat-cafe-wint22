@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { Container, Modal, Button } from 'react-bootstrap';
 import CatForm from './CatForm';
 import Flash from '../shared/Flash';
+import { Link } from 'react-router-dom';
 
 const Cats = ({ cats, getAllCats, msgs, setMsgs  }) => {
   const [adding, setAdd] = useState(false)
@@ -26,7 +27,9 @@ const Cats = ({ cats, getAllCats, msgs, setMsgs  }) => {
       <Button variant="primary" onClick={() => setAdd(true)}>
         +
       </Button>
-
+      <Link to='/random'>
+        <Button>Random Cat</Button>
+      </Link>
       <Modal show={adding} onHide={() => setAdd(false)}>
         <Modal.Header closeButton>
           <Modal.Title>Create Cat</Modal.Title>

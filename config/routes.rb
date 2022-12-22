@@ -6,5 +6,8 @@ Rails.application.routes.draw do
     resources :cats do
       resources :notes
     end
+
+    get '/randocato', to: 'cats#randocato'
+    
   end
 end

@@ -37,6 +37,10 @@ class Api::CatsController < ApplicationController
     render json: { message: "Cat Released"}
   end
 
+  def randocato
+    render json: current_user.cats.all.sample
+  end
+
   private 
     def set_cat
       @cat = current_user.cats.find(params[:id])
